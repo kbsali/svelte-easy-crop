@@ -4,6 +4,7 @@
 
 	export let image
 	export let crop = { x: 0, y: 0 }
+	export let boxShadow = '0 0 0 9999em'
 	export let zoom = 1
 	export let aspect = 4 / 3
 	export let minZoom = 1
@@ -270,7 +271,6 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 0 9999em;
     box-sizing: border-box;
     color: rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.5);
@@ -306,7 +306,7 @@
   .round {
     border-radius: 50%;
   }
-</style> 
+</style>
 
 <div
 	class="container"
@@ -329,7 +329,7 @@
 			class="cropperArea"
 			class:round={cropShape === 'round'}
 			class:grid={showGrid}
-			style="width: {cropperSize.width}px; height: {cropperSize.height}px;"
+			style="width: {cropperSize.width}px; height: {cropperSize.height}px;box-shadow: {boxShadow}"
 			data-testid="cropper"
 		></div>
 	{/if}
